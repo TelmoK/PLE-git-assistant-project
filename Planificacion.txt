@@ -1,0 +1,40 @@
+ESTADO ACTUAL:
+
+He modificado el archivo "datos/casos.tsv" con mis casos personales pero finalmente usaré Rasa como herramienta clásica como ya comenté. En este punto he preparado dentro de "Preparativos para Rasa" una estructura de carpetas básica para trabajar con rasa una vez esté instalado. En estas carpetas se encuentran los archivos necesarios para ejecutar "rasa train" y entrenar al modelo para identificar las palabras clave de las posibles consultas. 
+
+Para la opción moderna (LLM) usaré el propio Qwen2.5-0.5B-Instruct del que se habla en el notebook con el siguiente prompt:
+
+"Eres un asistente de línea de comandos cuya ÚNICA tarea es sugerir un comando de git dado un objetivo. Dada una consulta con una intención responde SOLO con un JSON con los posibles comandos:
+{
+    "command_lines": [
+	"git checkout -b ..."
+        "git checkout -b [nombre_de_rama_faltante]",
+    ]
+}"
+
+De esta manera en el script de Python lo que haré será simplemente interpretar este JSON para mostrarlo con el formato correcto.
+
+---------------------------------------------------------
+
+COMPLICACIONES:
+
+La instalación y uso de rasa requiere una versión de Python anterior a la 3.10, por lo que estoy teniendo problemas para hacer el setup de la herramienta, mi objetivo es conseguir automatizar esto para que no sea un problema al bajarse el proyecto.
+
+----------------------------------------------------------
+
+ESTRUCTURA DE CARPETAS:
+
+proyecto-asistente-git/
+├── actions/
+│   ├── __init__.py
+│   └── actions.py
+├── data/
+│   ├── nlu.yml
+│   └── rules.yml
+├── env_rasa/               # Entorno virtual de Python (aislado)
+├── models/                 # Modelos entrenados compilados (.tar.gz)
+├── config.yml
+├── domain.yml
+├── endpoints.yml
+├── instalar_asistente.bat  # Script de automatización de entorno
+└── main.py                 # Script principal (orquestador de los servicios)

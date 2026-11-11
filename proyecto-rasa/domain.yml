@@ -1,0 +1,36 @@
+version: "3.1"
+
+intents:
+  - inicializar_clonar
+  - guardar_cambios
+  - crear_rama
+
+entities:
+  - url_repo
+  - mensaje_commit
+  - nombre_rama
+
+slots:
+  url_repo:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: url_repo
+
+  mensaje_commit:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: mensaje_commit
+
+  nombre_rama:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: nombre_rama
+
+actions:
+  - action_generar_comando_git

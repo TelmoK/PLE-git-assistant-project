@@ -1,0 +1,13 @@
+proyecto-rasa/models/
+
+# Base de datos SQLite que crea Rasa para guardar el historial de conversaciones
+*.db
+*.sqlite
+*.sqlite3
+rasa.db
+events.db
+
+# Archivos de caché de entrenamiento de Rasa
+.rasa/
+results/
+*.log

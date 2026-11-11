@@ -1,0 +1,6 @@
+peticion	accion	directorio	mensaje_commit	archivos	falta
+Crear un  uevo repositiorio local	crear_repositiorio	.			
+Quiero descargar este repositiorio de GihHub	preguntar				URL
+Clonar proyecto de <URL>	clonar_repositorio	.			
+Cambiar mensaje del último commit	renombrar_commit		"""[nuevo mensaje]"""		
+No queria añadir el archivo <FILE> al stage	anular_stage			<FILE>		

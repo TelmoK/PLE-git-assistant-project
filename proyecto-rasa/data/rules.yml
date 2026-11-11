@@ -1,0 +1,17 @@
+version: "3.1"
+
+rules:
+- rule: Procesar intencion de inicializar o clonar
+  steps:
+  - intent: inicializar_clonar
+  - action: action_generar_comando_git
+
+- rule: Procesar intencion de guardar cambios
+  steps:
+  - intent: guardar_cambios
+  - action: action_generar_comando_git
+
+- rule: Procesar intencion de crear ramas
+  steps:
+  - intent: crear_rama
+  - action: action_generar_comando_git
